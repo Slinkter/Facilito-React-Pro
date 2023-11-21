@@ -3,16 +3,25 @@ import React from "react";
 
 import Navbar from "./Components/Navbar";
 import Events from "./Components/Events";
+import SignupForm from "./components/SignupForm";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [seachTerm, setSeachTerm] = useState("");
+
+  const handleNavbarSearch = (term) => {
+    setSeachTerm(term);
+  };
+
+  console.log(seachTerm, 10);
 
   return (
     <React.Fragment>
-      <Navbar />
-      <Events />
+      {/*   <Navbar onSearch={handleNavbarSearch} />
+      <Events searchTerm={seachTerm} /> */}
+
+      <SignupForm />
     </React.Fragment>
   );
 }
