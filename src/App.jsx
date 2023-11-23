@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 
 import Navbar from "./Components/Navbar";
@@ -8,8 +8,10 @@ import "./App.css";
 
 function App() {
   const [seachTerm, setSeachTerm] = useState("");
+  const containerRef = useRef();
 
   const handleNavbarSearch = (term) => {
+    console.log(containerRe.current);
     setSeachTerm(term);
   };
 
@@ -17,7 +19,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Navbar onSearch={handleNavbarSearch} />
+      <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
       <Events searchTerm={seachTerm} />
     </React.Fragment>
   );

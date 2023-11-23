@@ -58,3 +58,19 @@ Que son las ref
 - no hace re-rendeo de la pagina
 - son mutables , se puede modificar
 - no se debe usar ref.current en HTML-JSX
+
+### Clase 38
+
+implementado forwarred
+
+- guarda elementos para cambiar medida , atributos html
+- manipulado para el padre del componte para utilizar la referencia.
+-
+
+### Clase 39
+
+implementacion de useImperativeHandle
+
+- usado para crear component reusables
+- El componente padre puede acceder a valores del componente hijo
+-
