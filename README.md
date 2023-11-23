@@ -85,9 +85,52 @@ Introduccion a Estilo
 Implementando Modulo de CSS
 
 - Modulos de css , esto archivos crean clases unicas con un Hash unica que no se repite. para evitar mezcla con otro clase.
-
 - archivocss.module.css
-
 - se recomienda usar camelCase
 - No usar "-" nombrar la clase css
+
+# Modulo 07
+
+### Clase 43
+
+Como funciona el Routing
+
+- uso de react router
+  https://reactrouter.com/en/main
+- no se usa en rutas camelCase sino "-"
+- Cambio de rutas
+- Apilar rutas
+- Arreglo de Push - Pop
+-
+
+### Clase 44
+
+Qué es el Client Side Routing
+
+- componetes para cambio de rutas.
+- permite escalar varias rutas
+- el router crear un arreglo de rutas
+-
+
+### Clase 44
+
+Configuracion routing en nuestro proyecto
+
+### Clase 48
+
+definiendo parametros en las rutas
+
+- rutas con parametros
+- el parametro si usa camelCase
+- path: "/detail/:eventId",
+- le enviamos un argumento en el navegado
+-
+
+### Clase 49
+
+rutas anidadas
+
+- se tiene especificar nuevas rutas dentro de la ruta principal
+- Decediente directo
+- /profile/my-account
 -
