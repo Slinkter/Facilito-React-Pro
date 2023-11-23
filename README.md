@@ -38,8 +38,8 @@ Como funciona useEffect
 
 Creando Hook reusable
 
--
--
--
--
--
+- Podemos crear hooks personlizados
+- Implementar y logica de crear un hook
+- Aumentar la reusabilidad del codigo
+- Encapsulamiento y abstraido del codigo
+- un hook si puede llamar un hook

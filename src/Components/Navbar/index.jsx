@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = ({ onSearch }) => {
   const [search, setSearch] = useState("");
@@ -12,7 +12,8 @@ const Navbar = ({ onSearch }) => {
     }
   };
 
-  console.log(search);
+  useEffect(() => {});
+
   return (
     <div>
       <p>Mi Boletera </p>
