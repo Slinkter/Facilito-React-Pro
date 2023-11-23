@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 
 import Navbar from "./Components/Navbar";
 import Events from "./Components/Events";
-import SignupForm from "./components/SignupForm";
 
 import "./App.css";
 
@@ -18,10 +17,8 @@ function App() {
 
   return (
     <React.Fragment>
-      {/*   <Navbar onSearch={handleNavbarSearch} />
-      <Events searchTerm={seachTerm} /> */}
-
-      <SignupForm />
+      <Navbar onSearch={handleNavbarSearch} />
+      <Events searchTerm={seachTerm} />
     </React.Fragment>
   );
 }
