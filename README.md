@@ -73,4 +73,21 @@ implementacion de useImperativeHandle
 
 - usado para crear component reusables
 - El componente padre puede acceder a valores del componente hijo
+- se implementa en el hijo y se llamar o usa en el padre .
+-
+
+### Clase 40 - 41
+
+Introduccion a Estilo
+
+### Clase 42
+
+Implementando Modulo de CSS
+
+- Modulos de css , esto archivos crean clases unicas con un Hash unica que no se repite. para evitar mezcla con otro clase.
+
+- archivocss.module.css
+
+- se recomienda usar camelCase
+- No usar "-" nombrar la clase css
 -
