@@ -43,3 +43,18 @@ Creando Hook reusable
 - Aumentar la reusabilidad del codigo
 - Encapsulamiento y abstraido del codigo
 - un hook si puede llamar un hook
+
+### Clase 35
+
+Que son las ref
+
+- es un hook
+- sirve para referencial algo
+- es para utlizado para referencia valores funcions objectos
+- devuelve un objecto
+- actualiza el valor sin la necesidad de que sea el valor ractivo
+- se actualiza el valor pero no el component
+- en useState si se cambia de valor , el component se actualiza(render la pagina).
+- no hace re-rendeo de la pagina
+- son mutables , se puede modificar
+- no se debe usar ref.current en HTML-JSX
