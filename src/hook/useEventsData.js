@@ -7,7 +7,7 @@ const useEventsData = () => {
   const fetchEvents = async (params) => {
     try {
       console.log("fetchEvents");
-      const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=RUMlldV5z0lh0xli5AJAgYWF13TePTL7${
+      const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=RUMlldV5z0lh0xli5AJAgYWF13TePTL7&countryCode=MX${
         params?.length ? params : ""
       }`;
       console.log(url);
@@ -26,6 +26,7 @@ const useEventsData = () => {
     isLoading,
     error,
     fetchEvents,
+    pageCount: data?.page || {},
   };
 };
 

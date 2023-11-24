@@ -168,3 +168,9 @@ useFetch
 
 - Incrementar la reusabilidad
 -
+
+### Clase 55
+
+Agregando Paginacion
+
+-
