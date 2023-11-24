@@ -3,7 +3,6 @@ import useEventsData from "../../hook/useEventsData";
 import { useNavigate } from "react-router-dom";
 
 const Events = ({ searchTerm }) => {
-  const { events, isLoading, error } = useEventsData();
   const navigate = useNavigate();
 
   const handleEventItemClick = (id) => {

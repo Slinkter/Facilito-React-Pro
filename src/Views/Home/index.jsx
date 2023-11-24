@@ -1,22 +1,36 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Events from "../../Components/Events";
+import useEventsData from "../../hook/useEventsData";
 
 const Home = () => {
+  const { events, isLoading, error, fetchEvents } = useEventsData();
   const [seachTerm, setSeachTerm] = useState("");
   const containerRef = useRef();
 
   const handleNavbarSearch = (term) => {
     console.log(containerRe.current);
     setSeachTerm(term);
+    fetchEvents(`&keyword=${term}`);
   };
 
-  console.log(seachTerm, 10);
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
   return (
     <React.Fragment>
-      <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
-      <Events searchTerm={seachTerm} />
+      {error ? (
+        <div> Ha ocurrido un error </div>
+      ) : (
+        <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
+      )}
+      {isLoading ? (
+        <div> Ha ocurrido un error </div>
+      ) : (
+        <Events searchTerm={seachTerm} events={events} />
+      )}
+      {!!error && <div>Ha ocurrido un error</div>}
     </React.Fragment>
   );
 };
