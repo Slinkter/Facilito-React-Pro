@@ -133,4 +133,38 @@ rutas anidadas
 - se tiene especificar nuevas rutas dentro de la ruta principal
 - Decediente directo
 - /profile/my-account
+- uso de Outlet en component padre
+-
+
+### Clase 50
+
+Obteniendo valores de los parametros : useParams
+
+- leer ID desde url
+-
+-
+-
+
+### Clase 51 - 52
+
+- Creacion de usuario de ticket y APi
+- Uso de postman
+
+### Clase 53
+
+useFetch
+
+- Usado para llamar a una api
+- Libreria similar axios
+- Objecto que esta en windwos(navegador)
+- recibe un url de la api
+- la respuesta es una promesa del servidor
+- la promesa se convierte en formato JSON
+- tiene muchos parametros
+- puede enviar para guarda en una base de datos .
+-
+
+### Clase 54
+
+- Incrementar la reusabilidad
 -
