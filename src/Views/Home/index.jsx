@@ -9,7 +9,6 @@ const Home = () => {
   const containerRef = useRef();
 
   const handleNavbarSearch = (term) => {
-    console.log(containerRe.current);
     setSeachTerm(term);
     fetchEvents(`&keyword=${term}`);
   };
@@ -20,17 +19,8 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      {error ? (
-        <div> Ha ocurrido un error </div>
-      ) : (
-        <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
-      )}
-      {isLoading ? (
-        <div> Ha ocurrido un error </div>
-      ) : (
-        <Events searchTerm={seachTerm} events={events} />
-      )}
-      {!!error && <div>Ha ocurrido un error</div>}
+      <Navbar onSearch={handleNavbarSearch} ref={containerRef} />
+      <Events searchTerm={seachTerm} events={events} />
     </React.Fragment>
   );
 };
