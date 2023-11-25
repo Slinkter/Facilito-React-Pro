@@ -174,3 +174,10 @@ useFetch
 Agregando Paginacion
 
 -
+
+### Clase 5
+
+- Conversion de fechas
+- date fns
+
+https://date-fns.org/
