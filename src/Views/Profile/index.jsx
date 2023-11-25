@@ -1,4 +1,4 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
@@ -11,20 +11,34 @@ const Profile = () => {
   };
   return (
     <div>
-      <span
-        className={`${pathname.includes("my-info") ? styles.active : ""}`}
-        onClick={() => handleTabClick("my-info")}
+      <Link to="/" className={styles.homeLink}>
+        Inicio
+      </Link>
+      <div
+        style={{
+          margin: 12,
+        }}
       >
-        Mi Informacion
-      </span>
-      <span
-        className={`${pathname.includes("liked-events") ? styles.active : ""}`}
-        onClick={() => handleTabClick("liked-events")}
-      >
-        Eventos Favorito
-      </span>
+        <span
+          style={{ marginRight: 8 }}
+          className={`
+        ${pathname.includes("my-info") ? styles.active : ""}
+        ${styles.tab}`}
+          onClick={() => handleTabClick("my-info")}
+        >
+          Mi Informacion
+        </span>
+        <span
+          className={`
+        ${pathname.includes("liked-events") ? styles.active : ""} 
+        ${styles.tab}`}
+          onClick={() => handleTabClick("liked-events")}
+        >
+          Eventos Favorito
+        </span>
 
-      <Outlet />
+        <Outlet />
+      </div>
     </div>
   );
 };
