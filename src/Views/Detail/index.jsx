@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import style from "./Detail.module.css";
+import { es } from "date-fns/locale";
 import { format } from "date-fns";
 
-console.log(import.meta.env.VITE_TICKETMASTER_API_KEY);
+import style from "./Detail.module.css";
+import useEventsResults from "../../state/events-results";
 
 const Detail = () => {
+  const { data } = useEventsResults();
+  console.log("data - useEventResults", data);
   const { eventId } = useParams();
   const [eventData, setEventData] = useState({});
   const [error, setError] = useState({});
@@ -21,7 +24,6 @@ const Detail = () => {
         const data = await res.json();
         setEventData(data);
         setIsLoading(false);
-        console.log(data);
       } catch (error) {
         console.log(error);
         setEventData({});
@@ -34,26 +36,12 @@ const Detail = () => {
     return () => {};
   }, []);
 
-  console.log(eventData);
-  console.log(error);
-  console.log(isLoading);
-
   if (isLoading && Object.keys(eventData) === 0) {
     return <div>Cargando evento</div>;
   }
   if (Object.keys(error) > 0) {
     return <div>Ha ocurrido error</div>;
   }
-
-  /* const fecha = format(
-    new Date(eventData?.dates?.start?.dateTime),
-    "d LLLL yyyy"
-  ) */
-  const fecha = eventData?.dates?.start.dateTime ? (
-    <p>{format(new Date(eventData.dates.start.dateTime), "d LLLL yyyy")}</p>
-  ) : null;
-
-  console.log(fecha);
 
   return (
     <div className={style.container}>
@@ -66,7 +54,13 @@ const Detail = () => {
         <h4 className={style.eventName}>{eventData.name}</h4>
         <p className={style.infoParagraph}>{eventData.info}</p>
 
-        <p className={style.dateParagraph}>{fecha}</p>
+        <p className={style.dateParagraph}>
+          {eventData?.dates?.start.dateTime ? (
+            <p>
+              {format(new Date(eventData.dates.start.dateTime), "d LLLL yyyy")}
+            </p>
+          ) : null}
+        </p>
       </div>
       <div className={style.seatInfoContainer}>
         <h6 className={style.seatMaptitle}> Mapa concierto </h6>

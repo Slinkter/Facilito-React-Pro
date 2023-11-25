@@ -28,3 +28,16 @@
   margin-top: 10px;
   width: 100%;
 }
+
+.imageContainer {
+  position: relative;
+}
+
+.heartImage {
+  position: absolute;
+  width: 25px;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
