@@ -175,9 +175,38 @@ Agregando Paginacion
 
 -
 
-### Clase 5
+### Clase 57
 
 - Conversion de fechas
 - date fns
 
 https://date-fns.org/
+
+# Modulo 08
+
+### Clase 59
+
+Qué es un State Management
+
+- Soluciona la problema para solicitar la misma informacion
+- ReactJS dio la solucion llamado Store(como una base de datos)
+- Como una fuente de la verdad
+- Metodologia de centralizar todo en solo lugar
+- Librerias de manejadores de estados.
+  - Redux
+  - Zustand
+  - Mobx
+  - Recoil
+
+### Clase 60
+
+Qué es Zustand y Cómo Funciona
+
+- tiene multiples store para actualizar los componentes
+-
+
+### Clase 61
+
+Instalando Zustand
+
+-

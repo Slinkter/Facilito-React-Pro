@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import style from "./Detail.module.css";
 import { format } from "date-fns";
 
+console.log(import.meta.env.VITE_TICKETMASTER_API_KEY);
+
 const Detail = () => {
   const { eventId } = useParams();
   const [eventData, setEventData] = useState({});
@@ -12,7 +14,9 @@ const Detail = () => {
     const fetchEventData = async () => {
       try {
         const url = `
-          https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=RUMlldV5z0lh0xli5AJAgYWF13TePTL7`;
+          https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=${
+          import.meta.env.VITE_TICKETMASTER_API_KEY
+        }`;
         const res = await fetch(url);
         const data = await res.json();
         setEventData(data);
@@ -65,11 +69,15 @@ const Detail = () => {
         <p className={style.dateParagraph}>{fecha}</p>
       </div>
       <div className={style.seatInfoContainer}>
-        <h5> Mapa concierto </h5>
-        <img src={eventData.seatmap.staticUrl} alt="seatmaop event" />
-        <p>{eventData.placesNote}</p>
-        <p>Rango de precios : {eventData.priceRanges?.[0].min}</p>
+        <h6 className={style.seatMaptitle}> Mapa concierto </h6>
+        <img src={eventData.seatmap?.staticUrl} alt="seatmaop event" />
+        <p className={style.pleaseNoteLegend}>{eventData.pleaseNote}</p>
+        <p className={style.priceRangeLegend}>
+          Rango de precios : {eventData.priceRanges?.[0].min} -
+          {eventData.priceRanges?.[0].max}
+        </p>
       </div>
+      <a href={eventData.url}>Ir por tus boletos</a>
     </div>
   );
 };

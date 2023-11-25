@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Events from "../../Components/Events";
-import useEventsData from "../../hook/useEventsData";
+
 import ReactPaginate from "react-paginate";
 import style from "./Home.module.css";
+import useEventsResults from "../../state/events-results";
 
 const Home = () => {
-  const { events, isLoading, error, fetchEvents, pageCount } = useEventsData();
+  const { data, isLoading, error, fetchEvents } = useEventsResults();
+  const events = data?._embedded?.events || [];
+  const pageCount = data?.page || {};
   const [seachTerm, setSeachTerm] = useState("");
   const containerRef = useRef();
 
@@ -37,7 +40,7 @@ const Home = () => {
         <Events searchTerm={seachTerm} events={events} />
         <ReactPaginate
           className={style.pagination}
-          nextClassName={style.next}
+          nextClassName={style.nextgit}
           previousClassName={style.previous}
           pageClassName={style.page}
           breakLabel="..."

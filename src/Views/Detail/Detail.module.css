@@ -27,7 +27,19 @@
 
 .seatInfoContainer {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   margin: 10px;
+}
+
+.seatMaptitle {
+  margin: 6px 0;
+  font-size: 16px;
+}
+.pleaseNoteLegend {
+  text-align: left;
+  margin: 10px 0;
+}
+.priceRangeLegend {
+  margin: 4px 0;
 }
