@@ -6,6 +6,7 @@ import Error404 from "../Views/Error404";
 import Profile from "../Views/Profile";
 import LikedEvents from "../Views/Profile/components/LikedEvents";
 import MyInfo from "../Views/Profile/components/MyInfo";
+import { Suspense } from "react";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/detail/:eventId",
-    element: <Detail />,
+    element: (
+      <Suspense fallback={<div> Cargando ... </div>}>
+        <Detail />
+      </Suspense>
+    ),
   },
   {
     path: "/profile",

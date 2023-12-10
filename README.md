@@ -216,3 +216,86 @@ Instalando Zustand
 Agregando icono de like y unlike a los eventos
 
 -
+
+# Modulo 11
+
+### Clase 70
+
+Que es memoization
+
+- Tecnica de optimizacion
+- evita calculos inncesarios
+- evita doble comput
+- Ejmeplo : codigo fibonacci
+- es recomendado usarlo cuando una lista crece (10000 elementos)
+- Si no se aplica se renderiza toda la lista (10000 elementos) provacando lentitud
+- es un metodo que estan react
+- evita re-render inncesarios
+-
+
+### Clase 71
+
+Que es memo
+
+- es una funcion
+- Se usa en componente a memoriza (evitar el re-renderizar )
+- Sus propiedad no ha cambiado
+- Aplicable a lista de peso
+- Ayuda al perfomace
+- Tiene un costo de memoria
+-
+
+### Clase 72
+
+Recreacion de funciones (useCallback)
+
+- cuando react se actualiza se recrea
+- Se usa en funciones
+- Funciona como un cache de funciones
+- Esta funciona cuando se crea por primera vez , se queda memorizada
+- Es decir , en memoria queda guarado y cuando se renderiza la pagina
+- ya no se crea la funcion sino se consulta en cache la funcion.
+- cuando hay un parametro como en una url , se usa [dependencias]
+- para que vuelva a ser un componente reactivo solo si tiene parametros
+- es decir , si tiene parametros solo se vuelve a crear
+- recomendado para llamadas a la API
+
+### Clase 73
+
+Que es useMemo()
+
+- Es usado para calculos pequeños
+- Guarda en cache el resultado de una operacion
+- usado en variables y funciones
+
+### Clase 74
+
+React dev tools
+
+### Clase 75
+
+Dependencias useEffect
+
+### Clase 76
+
+Strict Mode
+
+- Solo pasa en modo estricto en desarrollo
+- se puede aplicar para cierto componenten tambien
+- ayuda a encontrar errores
+
+### Clase 77
+
+Error Boundary
+
+-
+
+### Clase 78
+
+suspense
+
+- suspende la interfaz cuando esta cargando una pagina
+- es para mostrar un spinner
+- es un componente ,
+- Ayuda a ya no utiliza useEffect
+-

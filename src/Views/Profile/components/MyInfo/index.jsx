@@ -16,7 +16,7 @@ const MyInfo = () => {
     setValue("age", userData?.age);
     setValue("email", userData?.email);
     return () => {};
-  }, []);
+  }, [setValue]);
 
   const handleFormSubmit = (data) => {
     try {
